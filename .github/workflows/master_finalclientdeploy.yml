@@ -20,18 +20,13 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: '14.x'
-    - name: CI false
-      env:
-        CI: ''
-        
+
     - name: npm install, build, and test
       run: |
         npm install
         npm run build --if-present
         npm run test --if-present
-    - name: CI true
-      env: 
-        CI: true
+
     - name: Upload artifact for deployment job
       uses: actions/upload-artifact@v2
       with:
@@ -57,5 +52,5 @@ jobs:
       with:
         app-name: 'finalclientdeploy'
         slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_e64067f9bac6449688c5e04b05d6cbfe }}
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_eff9c9ce712746dabd1b5afbe1287a48 }}
         package: .

@@ -30,6 +30,7 @@ jobs:
         npm run build --if-present
         npm run test --if-present
     - name: Set CI
+      run: echo 'Setting CI again'
       env: 
         CI: true
     - name: Upload artifact for deployment job
